@@ -29,9 +29,3 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
-
-int	main(void)
-{
-	ft_strdup("test");
-	printf("\n");
-}
