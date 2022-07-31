@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c	                                :+:      :+:    :+:   */
+/*   ft_strstr.c										:+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -20,4 +20,24 @@ size_t	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strstr(const char *haystack, const char *needle)
+{
+	size_t	n_len;
+	size_t	i;
+	size_t	j;
+
+	n_len = ft_strlen(needle);
+	i = 0;
+	while (haystack[i])
+	{
+		j = 0;
+		while (needle[j] && needle[j] == haystack[i + j])
+			j++;
+		if (j == n_len)
+			return ((char *) &haystack[i]);
+		i++;
+	}
+	return (NULL);
 }

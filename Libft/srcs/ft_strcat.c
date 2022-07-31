@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c	                                :+:      :+:    :+:   */
+/*   ft_strcat.c	                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,13 +11,23 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+char	*ft_strcat(char *dest, const char *src)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i])
+	while (dest[i])
 		i++;
-	return (i);
+	j = 0;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

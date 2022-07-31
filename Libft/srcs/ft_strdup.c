@@ -10,14 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+static size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_strdup(const char *s)
 {
 	char	*str;
 	int		i;
 
-	str = malloc(sizeof(char) * (strlen(s) + 1));
+	str = (char *) malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == 0)
 		return (0);
 	i = 0;

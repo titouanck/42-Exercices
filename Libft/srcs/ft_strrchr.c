@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c	                                :+:      :+:    :+:   */
+/*   ft_strrchr.c										:+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,18 @@
 
 #include <string.h>
 
-size_t	ft_strlen(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
+	char	*last_oc;
 	size_t	i;
 
+	last_oc = NULL;
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		if (s[i] == c)
+			last_oc = (char *) &s[i];
 		i++;
-	return (i);
+	}
+	return (last_oc);
 }
