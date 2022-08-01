@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,17 @@
 
 #include <string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_memset(void *s, int c, size_t n)
 {
+	char	*tmp;
 	size_t	i;
 
+	tmp = (char *) s;
 	i = 0;
-	while (s1[i] && s1[i] == s2[i])
+	while (i < n)
+	{
+		tmp[i] = c;
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (s);
 }

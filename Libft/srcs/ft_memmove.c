@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,13 +11,30 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdlib.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	char	*buf;
+	char	*d;
+	char	*s;
 	size_t	i;
 
+	buf = (char *) malloc(n * sizeof(char));
+	d = (char *) dest;
+	s = (char *) src;
 	i = 0;
-	while (s1[i] && s1[i] == s2[i])
+	while (i < n)
+	{
+		buf[i] = s[i];
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	i = 0;
+	while (i < n)
+	{
+		d[i] = buf[i];
+		i++;
+	}
+	free(buf);
+	return (dest);
 }

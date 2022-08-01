@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,21 @@
 
 #include <string.h>
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
+	char	*d;
+	char	*s;
 	size_t	i;
 
+	d = (char *) dest;
+	s = (char *) src;
 	i = 0;
-	while (s1[i] && s1[i] == s2[i])
+	while (i < n)
+	{
+		d[i] = s[i];
+		if (s[i] == c)
+			return (dest + i + 1);
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (NULL);
 }
