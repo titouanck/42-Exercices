@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,18 +11,11 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdlib.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_strdel(char **as)
 {
-	char	*tmp;
-	size_t	i;
-
-	tmp = (char *) s;
-	i = 0;
-	while (i < n)
-	{
-		tmp[i] = c;
-		i++;
-	}
-	return (s);
+	if (*as != NULL)
+		free(*as);
+	*as = NULL;
 }

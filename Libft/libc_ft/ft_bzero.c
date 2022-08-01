@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,30 +11,19 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdlib.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*buf;
-	char	*d;
-	char	*s;
+	char	*tmp;
 	size_t	i;
 
-	buf = (char *) malloc(n * sizeof(char));
-	d = (char *) dest;
-	s = (char *) src;
+	if (s == 0)
+		return ;
+	tmp = (char *) s;
 	i = 0;
 	while (i < n)
 	{
-		buf[i] = s[i];
+		tmp[i] = '\0';
 		i++;
 	}
-	i = 0;
-	while (i < n)
-	{
-		d[i] = buf[i];
-		i++;
-	}
-	free(buf);
-	return (dest);
 }

@@ -1,35 +1,36 @@
-SRCS	= ${S_PATH}*.c
+SRCS	= ${LIB}${wildcard *.c} ${ADDIT}${wildcard *.c} 
 
-S_PATH	= ./srcs/
+LIBC	= ./libc_ft/ 
+ADDIT	= ./additional_ft/
 
 INCLUDE	= ./includes/
 
 OBJS	= ${SRCS:.c=.o} 
 
-LIB	= libft.a
+LIB		= libft.a
 
-CC	= gcc
+CC		= gcc
 
 ARRC	= ar rc
 
-RM	= rm -f
+RM		= rm -f
 
 CFLAGS	= -Wall -Wextra -Werror -I ${INCLUDE}
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${LIB}:		${OBJS}
-		${ARRC} -o ${LIB} ${OBJS}
+			${ARRC} -o ${LIB} ${OBJS}
 
 all:		${LIB}
 
 clean:
-		${RM} ${OBJS}
+			${RM} ${OBJS}
 
 fclean:		clean
-		${RM} ${LIB}
+			${RM} ${LIB}
 
-re:		fclean all
+re:			fclean all
 
 .PHONY: all clean fclean re 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	ft_putchar(char c)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
-
-	d = (char *) dest;
-	s = (char *) src;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		if (s[i] == c)
-			return (dest + i + 1);
-		i++;
-	}
-	return (NULL);
+	write(1, &c, 1);
 }

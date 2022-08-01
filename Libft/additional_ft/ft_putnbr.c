@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-void	ft_bzero(void *s, size_t n)
+static void	ft_printnbr(long n)
 {
-	char	*tmp;
-	size_t	i;
-
-	tmp = (char *) s;
-	i = 0;
-	while (i < n)
+	if (n < 10)
 	{
-		tmp[i] = '\0';
-		i++;
+		n = n + '0';
+		write(1, &n, 1);
 	}
+	else
+	{
+		ft_printnbr(n / 10);
+		ft_printnbr(n % 10);
+	}
+}
+
+void	ft_putnbr(int n)
+{
+	long	nb;
+
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		nb = (long) n * (-1);
+	}
+	else
+		nb = n;
+	ft_printnbr(nb);
 }
