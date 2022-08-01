@@ -13,6 +13,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <string.h>
+
 /* libc functions */
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
