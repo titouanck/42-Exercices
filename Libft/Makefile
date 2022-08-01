@@ -1,11 +1,9 @@
-SRCS	= ${LIB}${wildcard *.c} ${ADDIT}${wildcard *.c} 
-
-LIBC	= ./libc_ft/ 
-ADDIT	= ./additional_ft/
+LIBC	= ${wildcard libc_ft/*.c} 
+ADDIT	= ${wildcard additional_ft/*.c}
 
 INCLUDE	= ./includes/
 
-OBJS	= ${SRCS:.c=.o} 
+OBJS	= ${LIBC:.c=.o} ${ADDIT:.c=.o} 
 
 LIB		= libft.a
 
