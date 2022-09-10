@@ -6,13 +6,13 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:34:16 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/09 15:58:32 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/11 01:54:57 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memccpy(void *restrict d, const void *restrict s, int c, size_t n)
+void	*ft_memccpy(void *d, const void *s, int c, size_t n)
 {
 	size_t	i;
 

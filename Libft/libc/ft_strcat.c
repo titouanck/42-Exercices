@@ -6,13 +6,13 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 17:01:46 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/10 17:14:43 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/11 01:55:28 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t	index;
 	size_t	i;
