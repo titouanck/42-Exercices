@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 17:32:38 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/10 18:00:19 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/11 00:06:06 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 size_t	ft_strlcat(char *restrict d, const char *restrict s, size_t dstsize)
 {
 	size_t	dst_len;
-	size_t	r;
 	size_t	index;
 	size_t	i;
 
