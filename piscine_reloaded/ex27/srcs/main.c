@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 10:24:16 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/09 12:25:45 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/10 01:57:54 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 void	ft_display_file(char *filename)
 {
 	int		fd;
-	int		ret_value;
-	char	buf [2];
+	char	buf;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
@@ -28,13 +27,11 @@ void	ft_display_file(char *filename)
 		write(STDERR_FILENO, "Unable to load file.\n", 21);
 		return ;
 	}
-	ret_value = fd;
-	buf[0] = 0;
-	while (ret_value)
+	buf = 0;
+	while (read(fd, &buf, 1))
 	{
-		if (buf[0])
-			ft_putchar(buf[0]);
-		ret_value = read(fd, buf, 1);
+		if (buf)
+			ft_putchar(buf);
 	}
 }
 
