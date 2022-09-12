@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:13:35 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 21:36:41 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:47:05 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h> 
+
+typedef struct s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
 
 /* libc functions */
 void	*ft_memset(void *b, int c, size_t len);
