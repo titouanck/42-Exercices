@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:13:35 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 21:47:05 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 11:03:11 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
 
 /* libc functions */
 void	*ft_memset(void *b, int c, size_t len);
@@ -83,5 +82,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* bonus functions */
+t_list	*ft_lstnew(void const *content, size_t content_size);
 
 #endif
