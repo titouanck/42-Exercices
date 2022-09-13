@@ -6,11 +6,11 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 23:38:26 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/10 23:50:01 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:26:53 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {

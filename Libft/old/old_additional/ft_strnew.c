@@ -6,11 +6,11 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 10:48:49 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 16:21:16 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:26:19 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
 char	*ft_strnew(size_t size)
 {
@@ -35,7 +35,7 @@ char	*ft_strnew(size_t size)
 // {
 // 	char	*new;
 // 	size_t	i;
-	
+
 // 	new = ft_strnew((sizeof(char) * ft_strlen("Bonjour") + 1));
 // 	if (!new)
 // 		return (0);

@@ -6,13 +6,13 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:53:43 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 14:05:21 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:18:29 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static void	*ft_memalloc2(size_t size)
+static void	*ft_memalloc(size_t size)
 {
 	void	*new;
 	size_t	i;
@@ -31,7 +31,7 @@ static void	*ft_memalloc2(size_t size)
 
 void	*calloc(size_t count, size_t size)
 {
-	return (ft_memalloc2(count * size));
+	return (ft_memalloc(count * size));
 }
 
 // #include <stdio.h>

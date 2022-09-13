@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 17:32:15 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/11 17:39:12 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/11 17:40:06 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:25:46 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_memdel(void **ap)
 {
-	void	*new;
-	size_t	i;
-
-	new = (void *) malloc(size);
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		*(unsigned char *)(new + i) = 0;
-		i++;
-	}
-	return (new);
+	if (ap && *ap)
+		free(*ap);
+	*ap = NULL;
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	void	*r = ft_memalloc(18);
+// 	void	*ptr;
+// 	size_t	i;
 
-// 	printf("%p\n", r);
-// 	free(r);
+// 	ptr = malloc(10);
+// 	if (!ptr)
+// 		return (0);
+// 	i = 0;
+// 	while (i < (10 - 1))
+// 	{
+// 		*(unsigned char *)(ptr + i) = 'a';
+// 		i++;
+// 	}
+// 	ft_memdel(&ptr);
 // }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 17:01:46 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/11 01:55:28 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/10 17:15:11 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:26:37 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t	index;
 	size_t	i;
@@ -21,7 +21,7 @@ char	*ft_strcat(char *s1, const char *s2)
 	while (s1[index])
 		index++;
 	i = 0;
-	while (s2[i])
+	while (s2[i] && i < n)
 	{
 		s1[index + i] = s2[i];
 		i++;
@@ -39,7 +39,7 @@ char	*ft_strcat(char *s1, const char *s2)
 // 	char	ss1[] = "Phrase une\0 Pas grand chose d'autre.";
 // 	char	ss2[] = "Deuxieme phrase ici haha\0 On rigole bien.";
 
-// 	printf("%s : %s\n\n", strcat(s1, s2), ft_strcat(ss1, ss2));
+// 	printf("%s : %s\n\n", strncat(s1, s2, 4), ft_strncat(ss1, ss2, 4));
 // 	printf("%s, %s\n", s1, s2);
 // 	printf("%s, %s\n\n", ss1, ss2);
 // }

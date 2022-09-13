@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 18:04:31 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 18:05:33 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/12 18:06:06 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:25:54 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-void	ft_putchar(char c)
+void	ft_putstr(char const *s)
 {
-	write(1, &c, 1);
+	write(1, s, ft_strlen(s));
 }
 
 // int	main(void)
 // {
-// 	ft_putchar('T');
-// 	ft_putchar('i');
-// 	ft_putchar('t');
-// 	ft_putchar('o');
-// 	ft_putchar('u');
-// 	ft_putchar('a');
-// 	ft_putchar('n');
+// 	ft_putstr("Success\n");
 // }

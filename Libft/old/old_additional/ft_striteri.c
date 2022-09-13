@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 16:49:48 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/10 16:55:04 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/12 11:52:07 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:26:09 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+// static void	test_toupper2(unsigned int index, char *c)
+// {
+// 	if (*c >= 'a' && 'z' >= *c && index % 2)
+// 		*c = *c - 'a' + 'A';
+// }
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
 	i = 0;
-	while (src[i])
+	while (s[i])
 	{
-		dst[i] = src[i];
+		(*f)(i, s + i);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	d1[] = "Bonjour !";
-// 	char	s1[] = "Salut !";
-// 	char	d2[] = "Bonjour !";
-// 	char	s2[] = "Salut !";
+// 	char	str[] = "Ceci est une phrase.";
 
-// 	printf("%s : %s\n", strcpy(d1, s1), ft_strcpy(d2, s2));
+// 	printf("Avant : %s\n", str);
+// 	ft_striteri(str, &test_toupper2);
+// 	printf("Apres : %s\n", str);
 // }

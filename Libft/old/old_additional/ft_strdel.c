@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 18:06:06 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 18:07:37 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/12 10:55:52 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:26:00 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_strdel(char **as)
 {
-	write(1, s, ft_strlen(s));
+	if (as && *as)
+		free(*as);
+	*as = NULL;
 }
+
+// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	ft_putstr("Success\n");
+// 	char	*str;
+
+// 	str = ft_memalloc(9);
+// 	ft_strdel(&str);
 // }

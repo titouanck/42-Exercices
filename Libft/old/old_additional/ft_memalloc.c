@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 11:14:52 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 11:21:02 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/11 17:32:15 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:25:43 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-void	ft_strclr(char *s)
+void	*ft_memalloc(size_t size)
 {
+	void	*new;
 	size_t	i;
 
+	new = (void *) malloc(size);
+	if (!new)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (i < size)
 	{
-		s[i] = '\0';
+		*(unsigned char *)(new + i) = 0;
 		i++;
 	}
+	return (new);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	str[] = "Voici une phrase.";
+// 	void	*r = ft_memalloc(18);
 
-// 	printf("Len : %lu\n", ft_strlen(str));
-// 	printf("[%c][%c][%c][%c]\t[%c]\n", str[0], str[1], str[2], str[3], str[16]);
-// 	ft_strclr(str);
-// 	printf("[%c][%c][%c][%c]\t[%c]\n", str[0], str[1], str[2], str[3], str[16]);
+// 	printf("%p\n", r);
+// 	free(r);
 // }

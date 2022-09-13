@@ -6,11 +6,11 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 11:22:46 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 11:51:16 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:26:06 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
 // static void	test_toupper(char *c)
 // {

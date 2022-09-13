@@ -6,11 +6,11 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 23:57:13 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/11 00:10:59 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:26:32 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

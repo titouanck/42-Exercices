@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 16:55:36 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/10 17:00:59 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/12 11:14:52 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:25:57 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_strclr(char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len && src[i])
+	while (s[i])
 	{
-		dst[i] = src[i];
+		s[i] = '\0';
 		i++;
 	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	d1[] = "Bonjour !";
-// 	char	s1[] = "Salut !";
-// 	char	d2[] = "Bonjour !";
-// 	char	s2[] = "Salut !";
+// 	char	str[] = "Voici une phrase.";
 
-// 	printf("%s : %s\n", strncpy(d1, s1, 3), ft_strncpy(d2, s2, 3));
+// 	printf("Len : %lu\n", ft_strlen(str));
+// 	printf("[%c][%c][%c][%c]\t[%c]\n", str[0], str[1], str[2], str[3], str[16]);
+// 	ft_strclr(str);
+// 	printf("[%c][%c][%c][%c]\t[%c]\n", str[0], str[1], str[2], str[3], str[16]);
 // }

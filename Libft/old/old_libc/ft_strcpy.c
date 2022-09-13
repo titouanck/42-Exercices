@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 10:55:52 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 11:13:52 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/10 16:49:48 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 15:26:34 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../old_includes/libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	if (as && *as)
-		free(*as);
-	*as = NULL;
+	size_t	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	*str;
+// 	char	d1[] = "Bonjour !";
+// 	char	s1[] = "Salut !";
+// 	char	d2[] = "Bonjour !";
+// 	char	s2[] = "Salut !";
 
-// 	str = ft_memalloc(9);
-// 	ft_strdel(&str);
+// 	printf("%s : %s\n", strcpy(d1, s1), ft_strcpy(d2, s2));
 // }
