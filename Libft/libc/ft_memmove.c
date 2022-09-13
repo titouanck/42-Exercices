@@ -6,12 +6,11 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:59:52 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 16:43:40 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:02:58 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

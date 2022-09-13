@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:32:13 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 13:53:52 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/12 12:39:00 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 14:24:21 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_list	*new;
+	char	*new;
+	size_t	i;
 
-	new = (void *) malloc(sizeof(content));
+	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
-	new->content = (void *) content;
-	new->next = NULL;
+	i = 0;
+	while (i < len && s[start + i])
+	{
+		new[i] = s[start + i];
+		i++;
+	}
+	new[i] = '\0';
 	return (new);
 }
 
@@ -28,15 +34,10 @@ t_list	*ft_lstnew(void *content)
 
 // int	main(void)
 // {
-// 	t_list	*r;
-// 	char	*test;
-// 	int		nb;
+// 	char	*str;
+// 	char	*new;
 
-// 	test = "Bonjour";
-// 	r = ft_lstnew((test));
-// 	printf("%s | %p\n", (char *) r->content, r->next);
-// 	free(r);
-// 	nb = 42;
-// 	r = ft_lstnew(&nb);
-// 	printf("%d | %p\n", *(int *) r->content, r->next);
+// 	str = "Voici une phrase.";
+// 	new = ft_substr(str, 6, 10);
+// 	printf("%s", new);
 // }

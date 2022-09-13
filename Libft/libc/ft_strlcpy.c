@@ -1,48 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 18:39:18 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 14:26:51 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/13 14:28:03 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 14:31:13 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static void	print_nb(long nb, int fd)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (nb > 10)
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < dstsize)
 	{
-		print_nb(nb / 10, fd);
-		print_nb(nb % 10, fd);
+		dst[i] = src[i];
+		i++;
 	}
-	else
-		ft_putchar_fd(nb + '0', fd);
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	nb;
-
-	nb = n;
-	if (nb < 0)
+	while (i < dstsize)
 	{
-		write(1, "-", 1);
-		nb = -nb;
+		dst[i] = '\0';
+		i++;
 	}
-	print_nb(nb, fd);
+	if (dstsize > 0)
+		dst[dstsize - 1] = '\0';
+	return (ft_strlen(src));
 }
-
-// int	main(void)
-// {
-// 	int	fd;
-
-// 	fd = open("test.txt", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
-// 	if (fd == -1)
-// 		return (1);
-// 	ft_putstr("...\n");
-// 	ft_putnbr_fd(42, fd);
-// }

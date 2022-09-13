@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 10:32:13 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 13:53:52 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/13 12:53:43 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 14:05:21 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-t_list	*ft_lstnew(void *content)
+static void	*ft_memalloc2(size_t size)
 {
-	t_list	*new;
+	void	*new;
+	size_t	i;
 
-	new = (void *) malloc(sizeof(content));
+	new = (void *) malloc(size);
 	if (!new)
 		return (NULL);
-	new->content = (void *) content;
-	new->next = NULL;
+	i = 0;
+	while (i < size)
+	{
+		*(unsigned char *)(new + i) = 0;
+		i++;
+	}
 	return (new);
+}
+
+void	*calloc(size_t count, size_t size)
+{
+	return (ft_memalloc2(count * size));
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	t_list	*r;
-// 	char	*test;
-// 	int		nb;
+// 	void	*r = ft_memalloc(18);
 
-// 	test = "Bonjour";
-// 	r = ft_lstnew((test));
-// 	printf("%s | %p\n", (char *) r->content, r->next);
+// 	printf("%p\n", r);
 // 	free(r);
-// 	nb = 42;
-// 	r = ft_lstnew(&nb);
-// 	printf("%d | %p\n", *(int *) r->content, r->next);
 // }

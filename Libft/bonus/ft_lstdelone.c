@@ -6,25 +6,23 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:03:34 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 11:36:01 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:48:25 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../includes/libft.h"
+#include "../includes/libft.h"
 
-// static void	test_del(void *elem, size_t size)
-// {
-// 	elem = (void *) NULL;
-// }
+// static void	test_del(void *elem);
 
-// void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
-// {
-// 	if (!del || !alst || !(*alst))
-// 		return ;
-// 	(*del)((*alst)->content, sizeof((*alst)->content));
-// 	free(*alst);
-// 	// *alst = NULL;
-// }
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (lst && (*del))
+	{
+		(*del)(lst->content);
+		free(lst);
+		lst = NULL;
+	}
+}
 
 // #include <stdio.h>
 
@@ -36,12 +34,16 @@
 // 	if (!hello)
 // 		return (0);
 // 	hello->content = "Bonjour";
-// 	hello->content_size = sizeof(char *);
 // 	hello->next = hello;
 // 	printf("Avant : %s | ", (unsigned char *) hello->content);
-// 	printf("%lu | %p\n", hello->content_size, hello->content);
-// 	ft_lstdelone(&hello, &test_del);
-// 	printf("Apres : %s | ", (unsigned char *) hello->content);
-// 	printf("%lu | %p\n", hello->content_size, hello->content);
+// 	printf("%p\n", hello->content);
+// 	ft_lstdelone(hello, &test_del);
 // 	hello->content = "salut";
+// 	printf("Apres : %s | ", (unsigned char *) hello->content);
+// 	printf("%p\n", hello->content);
+// }
+
+// static void	test_del(void *elem)
+// {
+// 	printf("TEST : %p\n", elem);
 // }
