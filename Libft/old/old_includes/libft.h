@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 15:13:35 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 15:23:48 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:53:06 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 char	*ft_strstr(const char *haystack, const char *needle);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
 /* additional functions */
 void	*ft_memalloc(size_t size);
@@ -51,5 +52,6 @@ void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
+char	*ft_strtrim(char const *s);
 
 #endif

@@ -6,13 +6,16 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:03:34 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 14:48:25 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:40:01 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-// static void	test_del(void *elem);
+// static void	test_del(void *elem)
+// {
+// 	elem = 0;
+// }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -20,7 +23,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	{
 		(*del)(lst->content);
 		free(lst);
-		lst = NULL;
 	}
 }
 
@@ -28,22 +30,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 
 // int	main(void)
 // {
-// 	t_list	*hello;
+	// t_list	*elem;
 
-// 	hello = (void *) malloc(sizeof(t_list));
-// 	if (!hello)
-// 		return (0);
-// 	hello->content = "Bonjour";
-// 	hello->next = hello;
-// 	printf("Avant : %s | ", (unsigned char *) hello->content);
-// 	printf("%p\n", hello->content);
-// 	ft_lstdelone(hello, &test_del);
-// 	hello->content = "salut";
-// 	printf("Apres : %s | ", (unsigned char *) hello->content);
-// 	printf("%p\n", hello->content);
-// }
-
-// static void	test_del(void *elem)
-// {
-// 	printf("TEST : %p\n", elem);
+	// elem = (void *) malloc(sizeof(t_list));
+	// if (!elem)
+	// 	return (0);
+	// elem->content = "Je suis le contenu de l'element.";
+	// elem->next = 0;
+	// printf("Avant : %s a l'adresse ", (unsigned char *) elem->content);
+	// printf("%p\n", elem);
+	// ft_lstdelone(elem, &test_del);
+	// // printf("Apres : %s a l'adresse ", (unsigned char *) elem->content);
+	// printf("%p\n", elem);
 // }

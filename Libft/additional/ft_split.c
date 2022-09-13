@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:56:46 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 17:52:49 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:23:20 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {
@@ -70,7 +69,7 @@ static void	set_mem(char **tab, char const *s, char c)
 	tab[i] = 0;
 }
 
-char	**ft_strsplit(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	words;
 	char	**tab;

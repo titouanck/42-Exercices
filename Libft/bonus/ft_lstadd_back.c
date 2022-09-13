@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:29:16 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 17:55:27 by tchevrie         ###   ########.fr       */
+/*   Created: 2022/09/13 17:41:07 by tchevrie          #+#    #+#             */
+/*   Updated: 2022/09/13 17:56:30 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	if (!alst || !(*alst) || !new)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	t_list	*current;
+
+	current = (*alst);
+	while (current->next)
+		current = current->next;
+	current->next = new;
 }
 
 // #include <stdio.h>
@@ -50,7 +52,7 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 // 	}
 // 	printf("\n");
 // 	begin = &elem1;
-// 	ft_lstadd_front(&begin, &elem4);
+// 	ft_lstadd_back(&begin, &elem4);
 // 	while (begin && begin->content)
 // 	{
 // 		printf("%d -> ", *(int *) begin->content);

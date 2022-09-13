@@ -6,7 +6,7 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:56:21 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/13 16:09:36 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:42:51 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char	src1[] = "Bien le bonjour.";
 
 // 	printf("ft_memmove :\n");
-// 	printf("r : %s\n", (unsigned char *)ft_memmove(dst1, src1, ft_strlen(src1)));
+// 	printf("r : %s\n", 
+/// (unsigned char *)ft_memmove(dst1, src1, ft_strlen(src1)));
 // 	printf("dst : %s\n", dst1);
 // 	printf("src : %s\n\n", src1);
 
@@ -73,12 +74,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char	dst5[] = "abcdefghijklmnopqrstuvwxyz";
 
 // 	printf("ft_memmove :\n");
-// 	printf("r : %s\n", (unsigned char *)ft_memmove(dst5, dst5 + 3, ft_strlen(dst5 + 3)));
+// 	printf("r : %s\n", 
+/// (unsigned char *)ft_memmove(dst5, dst5 + 3, ft_strlen(dst5 + 3)));
 // 	printf("dst/src : %s\n\n", dst5);
 
 // 	char	dst6[] = "abcdefghijklmnopqrstuvwxyz";
 
 // 	printf("memmove :\n");
-// 	printf("r : %s\n", (unsigned char *)memmove(dst6, dst6 + 3, ft_strlen(dst5 + 3)));
+// 	printf("r : %s\n", 
+/// (unsigned char *)memmove(dst6, dst6 + 3, ft_strlen(dst5 + 3)));
 // 	printf("dst/src : %s\n\n", dst6);
 // }

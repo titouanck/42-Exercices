@@ -6,58 +6,98 @@
 /*   By: tchevrie <tchevrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 16:23:06 by tchevrie          #+#    #+#             */
-/*   Updated: 2022/09/12 16:54:39 by tchevrie         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:19:30 by tchevrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static size_t	count_ws(char const *s)
+static char	*find_begin(char const *s1, char const *set)
 {
-	size_t	len;
 	size_t	i;
-	size_t	whitespaces;
+	size_t	j;
+	int		in_set;
 
-	len = ft_strlen(s) - 1;
-	whitespaces = 0;
+	in_set = 0;
 	i = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	j = 0;
+	while (s1[i])
 	{
-		whitespaces++;
+		in_set = 0;
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				in_set = 1;
+			j++;
+		}
+		if (!in_set)
+			break ;
 		i++;
 	}
-	if (s[i] == '\0')
-		return (0);
-	i = 0;
-	while (s[len - i] == ' ' || s[len - i] == '\t' || s[len - i] == '\n')
-	{
-		whitespaces++;
-		i++;
-	}
-	return (whitespaces);
+	return ((char *) s1 + i);
 }
 
-char	*ft_strtrim(char const *s)
+static char	*find_end(char const *s1, char const *set, char const *begin)
+{
+	size_t	i;
+	size_t	j;
+	int		in_set;
+
+	in_set = 0;
+	i = ft_strlen(s1) - 1;
+	j = 0;
+	while (s1 + i != begin)
+	{
+		in_set = 0;
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				in_set = 1;
+			j++;
+		}
+		if (!in_set)
+			break ;
+		i--;
+	}
+	return ((char *) s1 + i);
+}
+
+static char	*fill_str(char const *begin, char const *end)
 {
 	char	*new;
-	size_t	space;
 	size_t	i;
 
-	space = ft_strlen(s) - count_ws(s);
-	new = malloc(sizeof(char) * (space + 1));
+	new = malloc(sizeof(char) * (end - begin + 1));
 	if (!new)
 		return (NULL);
 	i = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-		i++;
-	s = s + i;
-	i = 0;
-	while (i < space)
+	while (begin + i < end)
 	{
-		new[i] = s[i];
+		new[i] = begin[i];
 		i++;
 	}
-	new[i] = '\0';
+	return (new);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*begin;
+	char	*end;
+	char	*new;
+
+	begin = find_begin(s1, set);
+	end = find_end(s1, set, begin);
+	if (begin == end)
+	{
+		new = malloc(sizeof(char) * 1);
+		new[0] = '\0';
+	}
+	else
+		new = fill_str(begin, end);
+	if (!new)
+		return (NULL);
 	return (new);
 }
 
@@ -67,7 +107,7 @@ char	*ft_strtrim(char const *s)
 // {
 // 	char	*str;
 
-// 	str = " \n \t  Hello, \tworld!  \t\t  \n\n  ";
+// 	str = "";
 // 	printf("1: %s\n", str);
-// 	printf("2: %s\n", ft_strtrim(str));
+// 	printf("2: %s\n", ft_strtrim(str, "wefgrhetnr"));
 // }
